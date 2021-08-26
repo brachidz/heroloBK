@@ -43,7 +43,7 @@ export default function Favorites() {
         <div>
             
             <center className="fontButtonds">
-           My Favorites
+           My Favorites!!!
            </center>
            <br></br>
             <div class=" container">

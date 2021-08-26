@@ -31,7 +31,8 @@ export default function Home() {
     // const currentWeather ="http://dataservice.accuweather.com/currentconditions/v1/"
     // const fiveDaysUrl= "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"
 
-    const baseURL ="http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=G2zVeiJtARitzgfWgp96KsAvvkQju4XL&q="
+    //const baseURL ="http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=G2zVeiJtARitzgfWgp96KsAvvkQju4XL&q="
+    const baseURL="http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&q="
     const currentWeather ="http://dataservice.accuweather.com/currentconditions/v1/"
     
     const fiveDaysUrl= "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"
@@ -63,7 +64,8 @@ export default function Home() {
        
         
 //Request to api currentWeather by key
-        const res1 = await axios.get(`${currentWeather}${Key}?apikey=G2zVeiJtARitzgfWgp96KsAvvkQju4XL&details=true`);
+        const res1 = await axios.get(`${currentWeather}${Key}?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true`);
+        //currentconditions/v1/57918?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true
         //currentconditions/v1/57918?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true
         
         //set the weathet text
@@ -74,7 +76,8 @@ export default function Home() {
         //set the temp
         dispatch(actions.setTemp(y));
         debugger
-        const res2 = await axios.get(`${fiveDaysUrl}${Key}?apikey=G2zVeiJtARitzgfWgp96KsAvvkQju4XL&details=true&metric=true`);
+        const res2 = await axios.get(`${fiveDaysUrl}${Key}?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true&metric=true`);
+        //forecasts/v1/daily/5day/57918?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true&metric=true
       
         for(let i=0;i<=4;i++)
      {
