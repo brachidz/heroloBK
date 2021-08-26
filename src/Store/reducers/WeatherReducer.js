@@ -41,28 +41,19 @@ const weather = {
         
     },
    
-    addToFavourites(state = initialState, action) {
-                const newFavourites = [...state.favourites, action.payload];
-                if (state.favourites.length > 0) {
-                    let arr = newFavourites.filter((item) => item.id == action.payload.id);
-                    if (arr.length < 1)
-                    {
-                        state.favourites = newFavourites;
+   
         
-                    }
+        
+    addToFavourites(state = initialState, action) {
        
-                }
-                else{
-            
-                    state.favourites = newFavourites;
-        alert("Added successfully")
+        const newFavourites = [...state.favourites, action.payload];
+        state.favourites = newFavourites;
+        alert("Added successfully");
         
-                }    
-        
-            },
-        
-        
+               
 
+       
+    },
     
     deleteFromFavourites(state = initialState.favourites, action) {
        
