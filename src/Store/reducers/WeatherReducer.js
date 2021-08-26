@@ -40,23 +40,30 @@ const weather = {
         state.text = action.payload;
         
     },
-    addToFavourites(state = initialState, action) {
+   
+    addToFavourites(state = initialState, action) {
+                const newFavourites = [...state.favourites, action.payload];
+                if (state.favourites.length > 0) {
+                    let arr = newFavourites.filter((item) => item.id == action.payload.id);
+                    if (arr.length < 1)
+                    {
+                        state.favourites = newFavourites;
+        
+                    }
        
-        const newFavourites = [...state.favourites, action.payload];
-        state.favourites = newFavourites;
+                }
+                else{
+            
+                    state.favourites = newFavourites;
         alert("Added successfully")
-       
-    },
-    // addToFavourites(state = initialState, action) {
-       
-    //     const newFavourites = [...state.favourites, action.payload];
-    //     if(state.favourites!=null)
-    //     {
-    //     let arr = state.favourites.filter((item) => item.id !== action.payload[1][action.payload[0]].id).map(({ id, name, weatherText }) => ({ id, name, weatherText }));
-    //     if (arr!=null)
-    //        state.favourites = newFavourites;}
-       
-    // },
+        
+                }    
+        
+            },
+        
+        
+
+    
     deleteFromFavourites(state = initialState.favourites, action) {
        
         let arr = action.payload[1]

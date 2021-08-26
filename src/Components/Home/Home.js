@@ -196,7 +196,7 @@ export default function Home() {
        <div class="col-sm-2" >
          <div class="card bshadow"  >
            <div class="card-body" >
-             <h5 class="card-title forFiveDays  " >{date[3]}</h5>
+             <h5 class="card-title forFiveDays " >{date[3]}</h5>
              <p class="card-text forFiveDays">{temperature[3]}c</p>
              
            </div>
