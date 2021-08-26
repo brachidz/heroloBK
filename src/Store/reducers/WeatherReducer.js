@@ -25,25 +25,35 @@ const initialState = {
 const weather = {
     
     addToDate(state = initialState, action) {
-        debugger
+
         //const newCart = [...state.cart, action.payload];
         state.date = action.payload;
-        console.log(initialState.date);
+        
     },
     addToTemperature(state = initialState, action) {
-        debugger
+        
         //const newCart = [...state.cart, action.payload];
         state.temperature = action.payload;
-        console.log(initialState.date);
+      
     },
     addToText(state = initialState, action) {
         state.text = action.payload;
         
     },
+    // addToFavourites(state = initialState, action) {
+       
+    //     const newFavourites = [...state.favourites, action.payload];
+    //     state.favourites = newFavourites;
+       
+    // },
     addToFavourites(state = initialState, action) {
        
         const newFavourites = [...state.favourites, action.payload];
-        state.favourites = newFavourites;
+        if(state.favourites!=null)
+        {
+        let arr = state.favourites.filter((item) => item.id !== action.payload[1][action.payload[0]].id).map(({ id, name, weatherText }) => ({ id, name, weatherText }));
+        if (arr!=null)
+           state.favourites = newFavourites;}
        
     },
     deleteFromFavourites(state = initialState.favourites, action) {
@@ -51,7 +61,7 @@ const weather = {
         let arr = action.payload[1]
         arr = arr.filter((item) => item.id !== action.payload[1][action.payload[0]].id).map(({ id, name, weatherText }) => ({ id, name, weatherText }));
         state.favourites = arr;
-        // console.log(state.cart.length); ‏
+        // delte from the array‏
     },
     
     addToRegions(state = initialState, action) {

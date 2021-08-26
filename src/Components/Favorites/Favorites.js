@@ -22,7 +22,6 @@ export default function Favorites() {
    
 
     const toHomePage = async (item) => {
-        debugger
        
       //set the current values to cityName and waetherText
        dispatch(actions.setCurrentCity(item.name));
@@ -42,7 +41,7 @@ export default function Favorites() {
     return (
         <div>
             
-            <center className="fontButtonds">
+            <center class="fontButtonds">
            My Favorites!!!
            </center>
            <br></br>
@@ -56,7 +55,7 @@ export default function Favorites() {
            <div class="card-body">
              <h5 class="card-title  fontButtonds" onClick={() => toHomePage(item)}>{item.name}</h5>
              <p class="card-text fontButtonds" style={{fontSize:'15px'}}   >{item.weatherText}</p>
-             <button className="btn btn-danger bshadow fontButtonds" style={{ backgroundColor: 'black' ,fontSize:'13px'}} onClick={(e) => dispatch(actions.deleteFromFavourites([index, favorites]))}>‏
+             <button class="btn btn-danger bshadow fontButtonds" style={{ backgroundColor: 'black' ,fontSize:'13px'}} onClick={(e) => dispatch(actions.deleteFromFavourites([index, favorites]))}>‏
     Remove From Favourites
     </button>
            </div>
@@ -73,14 +72,14 @@ export default function Favorites() {
 
             {/* { favorites != '' && favorites.map((item, index) => (
 
-<div className="card" style={{ width: '13rem'}}>
-    <div className="card-body">
+<div class="card" style={{ width: '13rem'}}>
+    <div class="card-body">
         <h5 class="card-title">{item.name}</h5>
         
         <br></br>
         <span><b>  {item.weatherText}</b></span>
     </div>
-    <button className="btn btn-danger bshadow fontButtonds" style={{ backgroundColor: 'black' }} onClick={(e) => dispatch(actions.deleteFromFavourites([index, favorites]))}>‏
+    <button class="btn btn-danger bshadow fontButtonds" style={{ backgroundColor: 'black' }} onClick={(e) => dispatch(actions.deleteFromFavourites([index, favorites]))}>‏
     Remove From Favourites
     </button>
     <div>

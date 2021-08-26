@@ -27,20 +27,18 @@ export default function Home() {
     
 
      // basic urls to the api
-    // const baseURL ="http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=ZZ8kOGT0i2XPkDu8NgiJszZGEsIXGvk1&q="
-    // const currentWeather ="http://dataservice.accuweather.com/currentconditions/v1/"
-    // const fiveDaysUrl= "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"
+    
 
-    //const baseURL ="http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=G2zVeiJtARitzgfWgp96KsAvvkQju4XL&q="
+    
     const baseURL="http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&q="
     const currentWeather ="http://dataservice.accuweather.com/currentconditions/v1/"
     
     const fiveDaysUrl= "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"
-//const goePosition="http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&q=31.768318%2C35.213711"
+
 
 
     const searchCity = async (event) => {
-        debugger
+        
         //Request to api autocomplete cities
         const res =  await axios.get(`${baseURL}${event.target.value}&language=en-us`)
         
@@ -51,7 +49,7 @@ export default function Home() {
 
 
     const chooseCity = async (city) => {
-        debugger
+
         //claer the arrays
         setDate([]);
         setTemperature([]);
@@ -65,8 +63,7 @@ export default function Home() {
         
 //Request to api currentWeather by key
         const res1 = await axios.get(`${currentWeather}${Key}?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true`);
-        //currentconditions/v1/57918?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true
-        //currentconditions/v1/57918?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true
+        
         
         //set the weathet text
         dispatch(actions.setWeatherText(res1.data[0].WeatherText));
@@ -75,10 +72,9 @@ export default function Home() {
         y=Math.round(y);
         //set the temp
         dispatch(actions.setTemp(y));
-        debugger
-        const res2 = await axios.get(`${fiveDaysUrl}${Key}?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true&metric=true`);
-        //forecasts/v1/daily/5day/57918?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true&metric=true
       
+        const res2 = await axios.get(`${fiveDaysUrl}${Key}?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&details=true&metric=true`);
+       
         for(let i=0;i<=4;i++)
      {
         // set the arrays of dates and text and temp for the next five days
@@ -99,7 +95,7 @@ export default function Home() {
     
     
     function convert(e) {
-      debugger
+     
       if(e === 'c')
       {
         dispatch(actions.setTemp( Math.round(temp * 9 / 5) + 32));
@@ -119,7 +115,7 @@ export default function Home() {
     return (
 
 <>
-<div className="container">
+<div class="container">
 <div class="row">
     <center>
 <div class="col">
@@ -218,7 +214,7 @@ export default function Home() {
          
        </div>
     <div class="col-sm-2">
-    <img   className=" floating"  src={p1} alt="fvfv" style={{width:'7rem',height:'6rem' , borderRadius:'50%'}}></img>
+    <img   class=" floating"  src={p1} alt="fvfv" style={{width:'7rem',height:'6rem' , borderRadius:'50%'}}></img>
     </div>
   
 </div>

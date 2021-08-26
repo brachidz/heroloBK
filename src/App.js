@@ -8,7 +8,7 @@ import Home from './Components/Home/Home'
 import Favorites from './Components/Favorites/Favorites'
 import store from './Store/store';
 import { useEffect } from 'react';
-import Geo from './Components/Geo';
+
 
 import p1 from './Components/Pictuers/p1.png'
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
           <center>
           <div className="shasow fontP" >
           <b> Weather</b>
-          {/* <Geo></Geo> */}
+         
           
           </div>
 
