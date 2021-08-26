@@ -35,7 +35,7 @@ export default function Home() {
     const currentWeather ="http://dataservice.accuweather.com/currentconditions/v1/"
     
     const fiveDaysUrl= "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"
-const goePosition="http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&q=31.768318%2C35.213711"
+//const goePosition="http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=3RGvmyvc1YFlR5Gf5FvUGNOHryOAUcMX&q=31.768318%2C35.213711"
 
 
     const searchCity = async (event) => {
